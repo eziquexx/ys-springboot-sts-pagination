@@ -2,6 +2,8 @@ package com.mysite.sbbpage;
 
 import java.util.List;
 
+import com.mysite.sbbpage.word.Word;
+
 public class PageDTO {
 	private int page;
 	private int size;

@@ -1,4 +1,4 @@
-package com.mysite.sbbpage;
+package com.mysite.sbbpage.word;
 
 public class Word {
 

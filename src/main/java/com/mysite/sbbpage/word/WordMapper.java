@@ -1,4 +1,4 @@
-package com.mysite.sbbpage;
+package com.mysite.sbbpage.word;
 
 import java.util.List;
 

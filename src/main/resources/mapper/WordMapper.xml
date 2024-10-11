@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.mysite.sbbpage.WordMapper">
-	<select id="getWordById" resultType="com.mysite.sbbpage.Word">
+<mapper namespace="com.mysite.sbbpage.word.WordMapper">
+	<select id="getWordById" resultType="com.mysite.sbbpage.word.Word">
 		SELECT id, word FROM page_tb WHERE id = #{id};
 	</select>
 	
-	<select id="getWordList" resultType="com.mysite.sbbpage.Word">
+	<select id="getWordList" resultType="com.mysite.sbbpage.word.Word">
 		<!-- SELECT id, word from page_tb ORDER BY id DESC; -->
 		<!-- SELECT id, word FROM page_tb ORDER BY word DESC LIMIT 10 OFFSET 10; -->
 		SELECT id, word FROM page_tb ORDER BY word DESC LIMIT #{size} OFFSET #{offset};

@@ -1,4 +1,4 @@
-package com.mysite.sbbpage;
+package com.mysite.sbbpage.word;
 
 import java.util.List;
 
@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.mysite.sbbpage.PageDTO;
 
 @Controller
 public class WordController {

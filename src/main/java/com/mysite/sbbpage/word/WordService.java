@@ -1,9 +1,11 @@
-package com.mysite.sbbpage;
+package com.mysite.sbbpage.word;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.mysite.sbbpage.PageDTO;
 
 @Service
 public class WordService {
