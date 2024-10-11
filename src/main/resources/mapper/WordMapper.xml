@@ -6,7 +6,8 @@
 	</select>
 	
 	<select id="getWordList" resultType="com.mysite.sbbpage.Word">
-		<!-- SELECT id, word FROM page_tb ORDER BY id DESC LIMIT 10; -->
-		SELECT id, word from page_tb ORDER BY id DESC;
+		<!-- SELECT id, word from page_tb ORDER BY id DESC; -->
+		<!-- SELECT id, word FROM page_tb ORDER BY word DESC LIMIT 10 OFFSET 10; -->
+		SELECT id, word FROM page_tb ORDER BY word DESC LIMIT #{size} OFFSET #{offset};
 	</select>
 </mapper>

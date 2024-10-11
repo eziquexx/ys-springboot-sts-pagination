@@ -16,7 +16,13 @@ public class WordService {
 	}
 	
 	// list
-	public List<Word> getWordList() {
-		return wordMapper.getWordList();
+	public List<Word> getWordList(int page, int size) {
+		// offset이 없어서 만들기
+		// offset = page - 1 * size
+		int offset = (page - 1) * size;
+		
+		// select * from table limit x offset y;
+		// limit = size, offset = ? 
+		return wordMapper.getWordList(size, offset);
 	}
 }
