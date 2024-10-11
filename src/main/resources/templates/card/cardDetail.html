@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"></link>
 </head>
 <body>
 <h1>cardDetail</h1>
+<ul>
+<li th:text="'ID: ' + ${card.id}"></li>
+<li th:text="'TITLE: ' + ${card.title}"></li>
+<li th:text="'SUBTEXT: ' + ${card.subtext}"></li>
+<li th:text="'IMG-URL: ' + ${card.imgUrl}"></li>
+<li th:text="'CREATED-AT: ' + ${card.createdAt}"></li>
+<li th:text="'UPDATED-AT: ' + ${card.updatedAt}"></li>
+</ul>
+
+<script th:src="@{/js/bootstrap.min.js}"></script>
 </body>
 </html>
