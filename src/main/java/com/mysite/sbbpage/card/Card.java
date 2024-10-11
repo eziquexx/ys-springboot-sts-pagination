@@ -1,6 +1,5 @@
 package com.mysite.sbbpage.card;
 
-import java.text.DateFormat;
 import java.time.LocalDateTime;
 
 public class Card {

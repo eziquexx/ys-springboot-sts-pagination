@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mysite.sbbpage.card.CardMapper">
-
+	<select id="getCardById" resultType="com.mysite.sbbpage.card.Card">
+		SELECT id, title, subtext, img_url AS imgUrl, created_at AS createdAt, updated_at AS updatedAt FROM card_db WHERE id = #{id};
+	</select>
 </mapper>
