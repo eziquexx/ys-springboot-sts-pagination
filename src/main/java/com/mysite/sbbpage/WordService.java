@@ -16,13 +16,21 @@ public class WordService {
 	}
 	
 	// list
-	public List<Word> getWordList(int page, int size) {
+	public PageDTO getWordList(int page, int size) {
 		// offset이 없어서 만들기
 		// offset = page - 1 * size
 		int offset = (page - 1) * size;
+		List<Word> content = wordMapper.getWordList(size, offset);
+		
+		
+		int totalElements = wordMapper.countTotal(); // 목록 총 갯수
+		int totalPages = (int) Math.ceil((double) totalElements / size); // 총 페이지번호
+		
+		// 생성자 함수 new로 만들어서 () 파라미터 값 반환. -> 어디로? controller에게. controller는 client에게
+		return new PageDTO(page, size, totalPages, totalElements, content);
+
 		
 		// select * from table limit x offset y;
 		// limit = size, offset = ? 
-		return wordMapper.getWordList(size, offset);
 	}
 }

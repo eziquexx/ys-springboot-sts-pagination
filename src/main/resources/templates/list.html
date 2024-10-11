@@ -16,7 +16,7 @@
 	    </tr>
 	  </thead>
 	  <tbody>
-	    <tr th:each="item:${content}">
+	    <tr th:each="item:${pageDTO.content}">
 	      <th scope="row" th:text="${item.id}">1</th>
 	      <td th:text="${item.word}">Mark</td>
 	    </tr>

@@ -10,4 +10,8 @@
 		<!-- SELECT id, word FROM page_tb ORDER BY word DESC LIMIT 10 OFFSET 10; -->
 		SELECT id, word FROM page_tb ORDER BY word DESC LIMIT #{size} OFFSET #{offset};
 	</select>
+	
+	<select id="countTotal" resultType="Integer">
+		SELECT count(*) FROM page_tb;
+	</select>
 </mapper>

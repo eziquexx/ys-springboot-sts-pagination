@@ -41,8 +41,8 @@ public class WordController {
 //	@ResponseBody
 	public String getWord(@RequestParam(name="page", defaultValue="1") int page,
 			@RequestParam(name="size", defaultValue="10") int size, Model model) {
-		List<Word> wordList = wordService.getWordList(page, size);
-		model.addAttribute("content", wordList);
+		PageDTO pageDTO = wordService.getWordList(page, size);
+		model.addAttribute("pageDTO", pageDTO);
 		
 		return "list";
 	}
