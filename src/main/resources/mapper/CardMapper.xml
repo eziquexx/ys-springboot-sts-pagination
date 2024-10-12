@@ -4,4 +4,12 @@
 	<select id="getCardById" resultType="com.mysite.sbbpage.card.Card">
 		SELECT id, title, subtext, img_url AS imgUrl, created_at AS createdAt, updated_at AS updatedAt FROM card_db WHERE id = #{id};
 	</select>
+	
+	<select id="getCardList" resultType="com.mysite.sbbpage.card.Card">
+		SELECT id, title, subtext, img_url AS imgUrl, created_at AS createAt, updated_at AS updatedAt FROM card_db ORDER BY id desc LIMIT #{size} OFFSET #{offset};
+	</select>
+	
+	<select id="countTotal" resultType="Integer">
+		select count(*) from card_db;
+	</select>
 </mapper>

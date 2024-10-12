@@ -1,10 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"></link>
 </head>
 <body>
-<h1>cardList</h1>
+<h1 class="text-center">cardList</h1>
+<div class="container">
+	<div class="row row-cols-3 g-5">
+		<div th:each="item:${pageDTO.content2}"  class="col">
+			<div class="card" style="width: 18rem;">
+			  <img th:src="${item.imgUrl}" class="card-img-top" alt="...">
+			  <div class="card-body">
+			    <h5 th:text="${item.title}" class="card-title">Card title</h5>
+			    <p th:text="${item.subtext}" class="card-text"></p>
+			    <p class="card-text"><small class="text-body-secondary" th:text="${item.createdAt}"></small></p>
+		    	<p class="card-text"><small class="text-body-secondary" th:text="${item.updatedAt}"></small></p>
+			  </div>
+			</div>
+		</div>
+		
+	</div>
+	
+	<nav aria-label="Page navigation example">
+	  <ul class="pagination justify-content-center">
+	    <li class="page-item" th:classappend="${pageDTO.page == 1} ? 'disabled'">
+	      <a class="page-link" th:href="@{/cards(page=${pageDTO.page - 1}, size=${pageDTO.size})}" aria-label="Previous">
+	        <span aria-hidden="true">&laquo;</span>
+	      </a>
+	    </li>
+	    <li class="page-item" th:each="pageNum: ${#numbers.sequence(1, pageDTO.totalPages)}" th:classappend="${pageNum == pageDTO.page} ? 'active'">
+	    	<a class="page-link" th:href="@{/cards(page=${pageNum}, size=${pageDTO.size})}" th:text="${pageNum}">1</a>
+	    </li>
+	    <li class="page-item" th:classappend="${pageDTO.page == pageDTO.totalPages} ? 'disabled'">
+	      <a class="page-link" th:href="@{/cards(page=${pageDTO.page + 1}, size=${pageDTO.size})}" aria-label="Next">
+	        <span aria-hidden="true">&raquo;</span>
+	      </a>
+	    </li>
+	  </ul>
+	</nav>
+</div>
+<script th:src="@{/js/bootstrap.min.js}"></script>
 </body>
 </html>
